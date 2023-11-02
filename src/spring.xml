@@ -3,9 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
-    <bean id="greetingService"
+    <!--<bean id="greetingService"
           class="core.GreetingServiceImpl">
-        <constructor-arg value="Welcome to Spring"/>
-        <!--<property name="greeting" value="Buenos Dias!" />-->
+        &lt;!&ndash;<constructor-arg value="Welcome to Spring"/>&ndash;&gt;
+        <property name="greeting" value="Welcome to Spring" />
+        &lt;!&ndash; GreetingServiceImpl greetingService =new GreetingServiceImpl();
+            greetingService.setGreeting("Welcome to Spring")&ndash;&gt;
+    </bean>-->
+    <bean id="examHall" class="com.di.ExamHall">
+        <!--<constructor-arg value="maths"/>
+        <constructor-arg ref="questionPaper"/>-->
+        <property name="questionPaper" ref="questionPaper"/>
     </bean>
+    <!--<bean id="questionPaper" class="com.di.QuestionPaperImpl"/>-->
+    <bean id="questionPaper" class="com.di.QuestionPaper2"/>
 </beans>

@@ -1,4 +1,4 @@
-package com.di;
+package com.spring;
 
 public interface QuestionPaper {
 

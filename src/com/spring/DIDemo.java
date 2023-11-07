@@ -1,12 +1,7 @@
-package com.di;
+package com.spring;
 
-import core.GreetingService;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
-import org.springframework.core.io.FileSystemResource;
 
 public class DIDemo {
     public static void main(String[] args) {
@@ -18,8 +13,20 @@ public class DIDemo {
                 new FileSystemXmlApplicationContext("D:\\Eclipse_Workspaces\\CoreJava\\SpringCore\\src\\spring.xml");
         /*ApplicationContext applicationContext=
                 new ClassPathXmlApplicationContext("spring.xml");*/
-        ExamHall examHall=(ExamHall)applicationContext.getBean("examHall");
+        /*ExamHall examHall=(ExamHall)applicationContext.getBean("examHall");
         Exam exam = examHall.performExam();
-        System.out.println(exam);
+        System.out.println(exam);*/
+        /*Cricket cricket=(Cricket) applicationContext.getBean("cricket");
+        try {
+            cricket.perform();
+        } catch (PerformanceException e) {
+            throw new RuntimeException(e);
+        }*/
+        InstrumentList instrumentList=(InstrumentList) applicationContext.getBean("instrumentList");
+        try {
+            instrumentList.perform();
+        } catch (PerformanceException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -1,4 +1,4 @@
-package core;
+package com.spring;
 
 public class GreetingServiceImpl implements GreetingService{
     private String greeting;

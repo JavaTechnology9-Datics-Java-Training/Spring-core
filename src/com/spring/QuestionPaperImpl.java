@@ -1,4 +1,4 @@
-package com.di;
+package com.spring;
 
 public class QuestionPaperImpl implements QuestionPaper{
     @Override

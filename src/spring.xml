@@ -10,11 +10,63 @@
         &lt;!&ndash; GreetingServiceImpl greetingService =new GreetingServiceImpl();
             greetingService.setGreeting("Welcome to Spring")&ndash;&gt;
     </bean>-->
-    <bean id="examHall" class="com.di.ExamHall">
-        <!--<constructor-arg value="maths"/>
-        <constructor-arg ref="questionPaper"/>-->
+    <!--<bean id="examHall" class="com.spring.ExamHall">
+        &lt;!&ndash;<constructor-arg value="maths"/>
+        <constructor-arg ref="questionPaper"/>&ndash;&gt;
         <property name="questionPaper" ref="questionPaper"/>
     </bean>
-    <!--<bean id="questionPaper" class="com.di.QuestionPaperImpl"/>-->
-    <bean id="questionPaper" class="com.di.QuestionPaper2"/>
+    &lt;!&ndash;<bean id="questionPaper" class="com.spring.QuestionPaperImpl"/>&ndash;&gt;
+    <bean id="questionPaper" class="com.spring.QuestionPaper2"/>-->
+   <!-- <bean id="customProcessor" class="com.spring.CustomProcessor"/>-->
+
+    <!--<bean id="cricket" class="core.Cricket">
+        <constructor-arg value="15"/>
+    </bean>
+    <bean id="instrumentList" class="com.spring.InstrumentList">
+        <property name="song" value="Bells Bells Bells"/>
+        <property name="instrument" ref="piano"/>
+    </bean>
+    <bean id="piano" class="com.spring.Piano"/>-->
+    <!--<bean id="band" class="com.spring.OneManBand">
+        &lt;!&ndash;<property name="instruments">
+            <list>
+                <ref bean="piano"/>
+                <ref bean="guitar"/>
+                <ref bean="piano"/>
+            </list>
+        </property>&ndash;&gt;
+        <property name="instruments">
+            <set>
+                <ref bean="piano"/>
+                <ref bean="guitar"/>
+                <ref bean="piano"/>
+            </set>
+        </property>
+    </bean>-->
+    <!--<bean id="mapTagExample" class="com.spring.MapTagExample">
+        <property name="instruments">
+            <map>
+                <entry key="PIANO" value-ref="piano"/>
+                <entry key="GUITAR" value-ref="guitar"/>
+                <entry key="PIANO" value-ref="piano"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="piano" class="com.spring.Piano"/>
+    <bean id="guitar" class="com.spring.Guitar"/>-->
+
+    <!--<bean id="propertiesTagExample" class="com.spring.PropertiesTagExample">
+        <property name="instruments">
+            <props>
+                <prop key="PIANO"> PLINK PLINK PLINK</prop>
+                <prop key="GUITAR"> STRUM STRUM STRUM </prop>
+                <prop key="PIANO"> PLINK PLINK PLINK</prop>
+            </props>
+        </property>
+    </bean>-->
+    <bean id="instrumentList" class="com.spring.InstrumentList" autowire="byName">
+        <property name="song" value="Bells Bells Bells"/>
+        <!--<property name="instrument" ref="piano"/>-->
+    </bean>
+    <bean id="instrument" class="com.spring.Piano"/>
 </beans>

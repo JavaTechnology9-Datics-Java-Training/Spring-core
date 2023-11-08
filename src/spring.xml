@@ -64,9 +64,27 @@
             </props>
         </property>
     </bean>-->
-    <bean id="instrumentList" class="com.spring.InstrumentList" autowire="byName">
+
+    <!--<bean id="instrumentList" class="com.spring.InstrumentList" autowire="byName">
         <property name="song" value="Bells Bells Bells"/>
+        &lt;!&ndash;<property name="instrument" ref="piano"/>&ndash;&gt;
+    </bean>
+    <bean id="inst" class="com.spring.Piano"/>-->
+
+    <!--<bean id="instrumentList" class="com.spring.InstrumentList" autowire="byType">
+        <property name="song" value="Bells Bells Bells"/>
+        &lt;!&ndash;<property name="instrument" ref="piano"/>&ndash;&gt;
+    </bean>
+
+    <bean id="instrument" class="com.spring.Piano"/>-->
+    <bean id="abstractExample" class="com.spring.AbstractExample" abstract="true">
+        <property name="email" value="abstract@gmail.com"/>
+    </bean>
+    <bean id="instrumentList" class="com.spring.InstrumentList"
+          autowire="constructor" init-method="initialize" destroy-method="destroy" parent="abstractExample">
+        <property name="song" value="Bells Bells Bells"/>
+        <constructor-arg ref="inst"/>
         <!--<property name="instrument" ref="piano"/>-->
     </bean>
-    <bean id="instrument" class="com.spring.Piano"/>
+    <bean id="inst" class="com.spring.Piano"/>
 </beans>

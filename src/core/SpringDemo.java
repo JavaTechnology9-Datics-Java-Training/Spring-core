@@ -25,6 +25,18 @@ public class SpringDemo {
         propertiesTagExample.perform();*/
          InstrumentList instrumentList=(InstrumentList) applicationContext.getBean("instrumentList");
          instrumentList.perform();
+         instrumentList.getEmail();
+        /*System.out.println(instrumentList);
+        InstrumentList instrumentList2=(InstrumentList) applicationContext.getBean("instrumentList");
+        instrumentList2.perform();
+        System.out.println(instrumentList2);
+        InstrumentList instrumentList3=(InstrumentList) applicationContext.getBean("instrumentList");
+        instrumentList3.perform();
+        System.out.println(instrumentList3);
+        InstrumentList instrumentList4=(InstrumentList) applicationContext.getBean("instrumentList");
+        instrumentList4.perform();
+        System.out.println(instrumentList4);
+        System.exit(2);*/
 
 
     }

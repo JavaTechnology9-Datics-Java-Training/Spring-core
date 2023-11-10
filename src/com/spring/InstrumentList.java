@@ -2,6 +2,9 @@ package com.spring;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.dao.DataAccessException;
+
+import java.sql.SQLException;
 
 public class InstrumentList extends AbstractExample implements Performer, InitializingBean{
     private String song;
@@ -24,7 +27,6 @@ public class InstrumentList extends AbstractExample implements Performer, Initia
 
     public void initialize(){
         System.out.println("Instrument ----initialize() method");
-
     }
 
     public void destroy(){

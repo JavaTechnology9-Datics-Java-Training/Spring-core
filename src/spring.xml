@@ -78,13 +78,18 @@
 
     <bean id="instrument" class="com.spring.Piano"/>-->
     <bean id="abstractExample" class="com.spring.AbstractExample" abstract="true">
-        <property name="email" value="abstract@gmail.com"/>
+        <property name="email" value="#{'abstract@gmail.com'}"/>
     </bean>
     <bean id="instrumentList" class="com.spring.InstrumentList"
           autowire="constructor" init-method="initialize" destroy-method="destroy" parent="abstractExample">
-        <property name="song" value="Bells Bells Bells"/>
-        <constructor-arg ref="inst"/>
+        <property name="song" value="#{inst.sound + 'lastName'}"/>
+        <constructor-arg value="#{inst}"/>
         <!--<property name="instrument" ref="piano"/>-->
     </bean>
-    <bean id="inst" class="com.spring.Piano"/>
+    <bean id="inst" class="com.spring.Piano">
+        <property name="sound" value="Musical Musical"/>
+    </bean>
+    <bean id="cricket" class="com.spring.Cricket">
+        <constructor-arg value="#{45*95}"/>
+    </bean>
 </beans>

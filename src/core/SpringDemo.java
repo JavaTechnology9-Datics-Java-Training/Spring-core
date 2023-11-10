@@ -37,6 +37,8 @@ public class SpringDemo {
         instrumentList4.perform();
         System.out.println(instrumentList4);
         System.exit(2);*/
+        /*Cricket cricket=(Cricket) applicationContext.getBean("cricket");
+        cricket.perform();*/
 
 
     }

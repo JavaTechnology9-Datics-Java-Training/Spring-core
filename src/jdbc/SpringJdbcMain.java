@@ -11,12 +11,13 @@ public class SpringJdbcMain {
         ApplicationContext applicationContext=
                 new FileSystemXmlApplicationContext("D:\\Eclipse_Workspaces\\CoreJava\\SpringCore\\src\\spring_jdbc.xml");
         PersonService personService=(PersonService) applicationContext.getBean("personService");
-        Person person=new Person();
-        person.setId(123);
-        person.setName("Spring-Jdbc");
-        person.setAddress("JDBC-Spring");
-        person.setEmail("jdbc@spring.com");
-        personService.savePerson(person);
-
+        /*Person person=new Person();
+        person.setId(124);
+        person.setName("Kumar");
+        person.setAddress("Hyderabad");
+        person.setEmail("kumar@spring.com");
+        personService.savePerson(person);*/
+        System.out.println(personService.getPerson(124));
+       // personService.deletePerson(789);
     }
 }

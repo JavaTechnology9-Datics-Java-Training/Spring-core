@@ -24,4 +24,9 @@ public class PersonServiceImpl implements PersonService{
     public Person updatePerson(Person person) {
         return personDao.updatePerson(person);
     }
+
+    @Override
+    public void deletePerson(long id) {
+        personDao.deletePerson(id);
+    }
 }

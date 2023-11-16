@@ -6,4 +6,5 @@ public interface PersonService {
     String savePerson(Person person);
     Person getPerson(long id);
     Person updatePerson(Person person);
+    void deletePerson(long id);
 }
